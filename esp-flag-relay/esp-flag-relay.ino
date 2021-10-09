@@ -12,8 +12,8 @@ String SendHTML(){
  ptr +="<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
  ptr +="<title>Ergo Display Control</title>\n";
  ptr +="<style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}\n";
- ptr +="body{margin-top: 100px;} h1 {color: #444444;margin-top: 60px; margin-bottom: 60px} h3 {color: #444444;}\n";
- ptr +=".button {display:inline-block;width: 40px; height: 40px;  background-color: darkgreen;color: white;padding: 30px 30px; \n";
+ ptr +="body{margin-top: 0px;} h1 {color: #444444;margin-top: 30px; margin-bottom: 30px} h3 {color: #444444;}\n";
+ ptr +=".button {display:inline-block;width: 24px; height: 24px;  background-color: darkgreen;color: white;padding: 30px 30px; \n";
  ptr +="text-decoration: none;font-size: 32px; font-weight: bold; margin: 8px ;cursor: pointer;border-radius: 12px;}\n";
  ptr +=".button.white {background-color: white;}\n";
  ptr +=".button:active {background-color: lightgreen}\n";
@@ -33,12 +33,42 @@ void rootPage() {
   Server.send(200, "text/html", SendHTML());
 }
 
+void handle_flag1() {
+  Server.send(200, "text/html", SendHTML());
+}
+
+void handle_flag2() {
+  Server.send(200, "text/html", SendHTML());
+}
+
+void handle_flag3() {
+  Server.send(200, "text/html", SendHTML());
+}
+
+void handle_flag4() {
+  Server.send(200, "text/html", SendHTML());
+}
+
+void handle_flag5() {
+  Server.send(200, "text/html", SendHTML());
+}
+
+void handle_flag6() {
+  Server.send(200, "text/html", SendHTML());
+}
+
+void handle_flag7() {
+  Server.send(200, "text/html", SendHTML());
+}
+
+void handle_flag8() {
+  Server.send(200, "text/html", SendHTML());
+}
+
 void handle_NotFound() {
   ESP8266WebServer& IntServer = Portal.host();
   IntServer.send(404, "text/html", "Unknown.");
 }
-
-
 
 void setup() {
   delay(1000);
@@ -46,6 +76,14 @@ void setup() {
   Serial.println();
 
   Server.on("/", rootPage);
+  Server.on("/flag1", handle_flag1);
+  Server.on("/flag2", handle_flag2);
+  Server.on("/flag3", handle_flag3);
+  Server.on("/flag4", handle_flag4);
+  Server.on("/flag5", handle_flag5);
+  Server.on("/flag6", handle_flag6);
+  Server.on("/flag7", handle_flag7);
+  Server.on("/flag8", handle_flag8);
   Server.onNotFound(handle_NotFound);
 
   Config.channel = 3;
