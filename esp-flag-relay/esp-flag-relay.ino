@@ -13,11 +13,10 @@ String SendHTML(){
  ptr +="<title>Ergo Display Control</title>\n";
  ptr +="<style>html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}\n";
  ptr +="body{margin-top: 0px;} h1 {color: #444444;margin-top: 30px; margin-bottom: 30px} h3 {color: #444444;}\n";
- ptr +=".button {display:inline-block;width: 24px; height: 24px;  background-color: darkgreen;color: white;padding: 30px 30px; \n";
- ptr +="text-decoration: none;font-size: 32px; font-weight: bold; margin: 8px ;cursor: pointer;border-radius: 12px;}\n";
+ ptr +=".button {display:inline-block; background-color: darkgreen;color: white;padding: 32px 32px; \n";
+ ptr +="text-decoration: none;font-size: 32px; font-weight: bold; margin: 6px ;cursor: pointer;border-radius: 12px;}\n";
  ptr +=".button.white {background-color: white;}\n";
- ptr +=".button:active {background-color: lightgreen}\n";
- ptr +=".button:hover{background-color: green}\n";
+ ptr +=".button:hover{background-color: limegreen}\n";
  ptr +="</style></head>\n";
  ptr +="<body>\n";
  ptr +="<h1>Ergo Flag Display</h1>\n";
@@ -34,34 +33,42 @@ void rootPage() {
 }
 
 void handle_flag1() {
+  digitalWrite(LED_BUILTIN, HIGH);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag2() {
+  digitalWrite(LED_BUILTIN, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag3() {
+  digitalWrite(LED_BUILTIN, HIGH);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag4() {
+  digitalWrite(LED_BUILTIN, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag5() {
+  digitalWrite(LED_BUILTIN, HIGH);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag6() {
+  digitalWrite(LED_BUILTIN, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag7() {
+  digitalWrite(LED_BUILTIN, HIGH);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag8() {
+  digitalWrite(LED_BUILTIN, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
@@ -71,9 +78,7 @@ void handle_NotFound() {
 }
 
 void setup() {
-  delay(1000);
-  Serial.begin(115200);
-  Serial.println();
+  pinMode(LED_BUILTIN, OUTPUT);
 
   Server.on("/", rootPage);
   Server.on("/flag1", handle_flag1);
@@ -89,6 +94,8 @@ void setup() {
   Config.channel = 3;
   Portal.config(Config);
   Portal.begin();
+
+  Serial.begin(115200);
   Serial.println("Web Server started:" + WiFi.localIP().toString());
 }
 
