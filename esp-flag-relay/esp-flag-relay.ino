@@ -3,6 +3,16 @@
 #include <AutoConnect.h>
 #include "PageBuilder.h"
 
+#define D0  16
+#define D1  5
+#define D2  4
+#define D3  0
+#define D4  2
+#define D5  14
+#define D6  12
+#define D7  13
+#define D8  15
+
 ESP8266WebServer Server;
 AutoConnect Portal(Server);
 AutoConnectConfig Config;
@@ -20,9 +30,9 @@ String SendHTML(){
  ptr +="</style></head>\n";
  ptr +="<body>\n";
  ptr +="<h1>Ergo Flag Display</h1>\n";
- ptr +="<a class=\"button\" href=\"/flag1\">&#x2615;</a><a class=\"button\" href=\"/flag2\">&#x1F377;</a><a class=\"button\" href=\"/flag3\">3</a><p>\n";
+ ptr +="<a class=\"button\" href=\"/flag1\">1</a><a class=\"button\" href=\"/flag2\">2</a><a class=\"button\" href=\"/flag3\">3</a><p>\n";
  ptr +="<a class=\"button\" href=\"/flag4\">4</a><a class=\"button\" href=\"/flag5\">5</a><a class=\"button\" href=\"/flag6\">6</a><p>\n";
- ptr +="<a class=\"button\" href=\"/flag7\">7</a><a class=\"button\" href=\"/flag8\">8</a><a class=\"button white\">-</a>\n";
+ ptr +="<a class=\"button\" href=\"/flag7\">7</a><a class=\"button\" href=\"/flag8\">8</a><a class=\"button\" href=\"/flag9\">9</a><p>\n";
  ptr +="</body>\n";
  ptr +="</html>\n";
   return ptr;
@@ -33,42 +43,73 @@ void rootPage() {
 }
 
 void handle_flag1() {
-  digitalWrite(LED_BUILTIN, HIGH);
+  digitalWrite(D0, HIGH);
+  delay(1000);
+  digitalWrite(D0, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag2() {
-  digitalWrite(LED_BUILTIN, LOW);
+
+  digitalWrite(D1, HIGH);
+  delay(1000);
+  digitalWrite(D1, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag3() {
-  digitalWrite(LED_BUILTIN, HIGH);
+  
+  digitalWrite(D2, HIGH);
+  delay(1000);
+  digitalWrite(D2, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag4() {
-  digitalWrite(LED_BUILTIN, LOW);
+  
+  digitalWrite(D3, HIGH);
+  delay(1000);
+  digitalWrite(D3, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag5() {
-  digitalWrite(LED_BUILTIN, HIGH);
+  
+  digitalWrite(D4, HIGH);
+  delay(1000);
+  digitalWrite(D4, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag6() {
-  digitalWrite(LED_BUILTIN, LOW);
+  
+  digitalWrite(D5, HIGH);
+  delay(1000);
+  digitalWrite(D5, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag7() {
-  digitalWrite(LED_BUILTIN, HIGH);
+  
+  digitalWrite(D6, HIGH);
+  delay(1000);
+  digitalWrite(D6, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
 void handle_flag8() {
-  digitalWrite(LED_BUILTIN, LOW);
+  
+  digitalWrite(D7, HIGH);
+  delay(1000);
+  digitalWrite(D7, LOW);
+  Server.send(200, "text/html", SendHTML());
+}
+
+void handle_flag9() {
+  
+  digitalWrite(D8, HIGH);
+  delay(1000);
+  digitalWrite(D8, LOW);
   Server.send(200, "text/html", SendHTML());
 }
 
@@ -79,7 +120,16 @@ void handle_NotFound() {
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
-
+  pinMode(D0, OUTPUT);
+  pinMode(D1, OUTPUT);
+  pinMode(D2, OUTPUT);
+  pinMode(D3, OUTPUT);
+  pinMode(D4, OUTPUT);
+  pinMode(D5, OUTPUT);
+  pinMode(D6, OUTPUT);
+  pinMode(D7, OUTPUT);
+  pinMode(D8, OUTPUT);
+  
   Server.on("/", rootPage);
   Server.on("/flag1", handle_flag1);
   Server.on("/flag2", handle_flag2);
@@ -89,6 +139,7 @@ void setup() {
   Server.on("/flag6", handle_flag6);
   Server.on("/flag7", handle_flag7);
   Server.on("/flag8", handle_flag8);
+  Server.on("/flag9", handle_flag9);
   Server.onNotFound(handle_NotFound);
 
   Config.channel = 3;
