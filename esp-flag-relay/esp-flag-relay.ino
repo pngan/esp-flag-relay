@@ -7,7 +7,7 @@
 #define D1  5
 #define D2  4
 #define D3  0
-#define D4  2
+#define D4  2 // Do not use this PIN. Connecting hardware to it will cause upload connections to fail
 #define D5  14
 #define D6  12
 #define D7  13
@@ -31,8 +31,8 @@ String SendHTML(){
  ptr +="<body>\n";
  ptr +="<h1>Ergo Flag Display</h1>\n";
  ptr +="<a class=\"button\" href=\"/flag1\">1</a><a class=\"button\" href=\"/flag2\">2</a><a class=\"button\" href=\"/flag3\">3</a><p>\n";
- ptr +="<a class=\"button\" href=\"/flag4\">4</a><a class=\"button\" href=\"/flag5\">5</a><a class=\"button\" href=\"/flag6\">6</a><p>\n";
- ptr +="<a class=\"button\" href=\"/flag7\">7</a><a class=\"button\" href=\"/flag8\">8</a><a class=\"button\" href=\"/flag9\">9</a><p>\n";
+ ptr +="<a class=\"button\" href=\"/flag4\">4</a><a class=\"button\" href=\"/flag6\">5</a><a class=\"button\" href=\"/flag7\">6</a><p>\n";
+ ptr +="<a class=\"button\" href=\"/flag8\">7</a><a class=\"button\" href=\"/flag9\">8</a><a class=\"button\">-</a><p>\n";
  ptr +="</body>\n";
  ptr +="</html>\n";
   return ptr;
@@ -73,13 +73,7 @@ void handle_flag4() {
   Server.send(200, "text/html", SendHTML());
 }
 
-void handle_flag5() {
-  
-  digitalWrite(D4, HIGH);
-  delay(1000);
-  digitalWrite(D4, LOW);
-  Server.send(200, "text/html", SendHTML());
-}
+// do not use void handle_flag5() - causes upload on serial port to fail
 
 void handle_flag6() {
   
@@ -130,12 +124,12 @@ void setup() {
   pinMode(D7, OUTPUT);
   pinMode(D8, OUTPUT);
   
+  
   Server.on("/", rootPage);
   Server.on("/flag1", handle_flag1);
   Server.on("/flag2", handle_flag2);
   Server.on("/flag3", handle_flag3);
   Server.on("/flag4", handle_flag4);
-  Server.on("/flag5", handle_flag5);
   Server.on("/flag6", handle_flag6);
   Server.on("/flag7", handle_flag7);
   Server.on("/flag8", handle_flag8);
