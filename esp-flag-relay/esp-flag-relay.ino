@@ -44,7 +44,9 @@ void rootPage() {
 
 void handle_flag1() {
   digitalWrite(D0, HIGH);
-  delay(1000);
+  digitalWrite(D4, LOW);
+  delay(2000);
+  digitalWrite(D4, HIGH);
   digitalWrite(D0, LOW);
   Server.send(200, "text/html", SendHTML());
 }
@@ -52,7 +54,9 @@ void handle_flag1() {
 void handle_flag2() {
 
   digitalWrite(D1, HIGH);
-  delay(1000);
+  digitalWrite(D4, LOW);
+  delay(2000);
+  digitalWrite(D4, HIGH);
   digitalWrite(D1, LOW);
   Server.send(200, "text/html", SendHTML());
 }
@@ -60,7 +64,9 @@ void handle_flag2() {
 void handle_flag3() {
   
   digitalWrite(D2, HIGH);
-  delay(1000);
+  digitalWrite(D4, LOW);
+  delay(2000);
+  digitalWrite(D4, HIGH);
   digitalWrite(D2, LOW);
   Server.send(200, "text/html", SendHTML());
 }
@@ -68,7 +74,7 @@ void handle_flag3() {
 void handle_flag4() {
   
   digitalWrite(D3, HIGH);
-  delay(1000);
+  delay(2000);
   digitalWrite(D3, LOW);
   Server.send(200, "text/html", SendHTML());
 }
@@ -78,7 +84,9 @@ void handle_flag4() {
 void handle_flag6() {
   
   digitalWrite(D5, HIGH);
-  delay(1000);
+  digitalWrite(D4, LOW);
+  delay(2000);
+  digitalWrite(D4, HIGH);
   digitalWrite(D5, LOW);
   Server.send(200, "text/html", SendHTML());
 }
@@ -86,7 +94,7 @@ void handle_flag6() {
 void handle_flag7() {
   
   digitalWrite(D6, HIGH);
-  delay(1000);
+  delay(2000);
   digitalWrite(D6, LOW);
   Server.send(200, "text/html", SendHTML());
 }
@@ -94,7 +102,9 @@ void handle_flag7() {
 void handle_flag8() {
   
   digitalWrite(D7, HIGH);
-  delay(1000);
+  digitalWrite(D4, LOW);
+  delay(2000);
+  digitalWrite(D4, HIGH);
   digitalWrite(D7, LOW);
   Server.send(200, "text/html", SendHTML());
 }
@@ -102,7 +112,9 @@ void handle_flag8() {
 void handle_flag9() {
   
   digitalWrite(D8, HIGH);
-  delay(1000);
+  digitalWrite(D4, LOW);
+  delay(2000);
+  digitalWrite(D4, HIGH);
   digitalWrite(D8, LOW);
   Server.send(200, "text/html", SendHTML());
 }
@@ -123,6 +135,8 @@ void setup() {
   pinMode(D6, OUTPUT);
   pinMode(D7, OUTPUT);
   pinMode(D8, OUTPUT);
+  
+  digitalWrite(D4, HIGH);
   
   
   Server.on("/", rootPage);
