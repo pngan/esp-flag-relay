@@ -55,3 +55,16 @@ Wifi connection to the ESP uses the AutoConnect library. The instructions on thi
 
 After connecting the power to the Flag Relay, the Hardware Reset Pin must be pressed on the ESP-8266 board, in order for it to start running.
 <img src="readme/IMG_5796.JPG" height="400">
+
+
+# Hardware Notes
+
+- ESP-8266 Micro controller, selected because it support 802.11g Wifi, and has 8 Digital Output Pins
+- AutoConnect library, to manage Wifi connection for the ESP-8266 
+- HTML page sends raw HTML to the `ESP8266WebServer`. The button panel is simple and does not require HTML libraries.
+- Output stage uses `TIP-120` Darlington transistors to switch the current to each solenoid in the Flag Relay. These are cheaper to use than hardware relays
+- Power supply is 22V (positive centre), which is required by the Flag Relay solenoids. The same power supply is reduced to 3.3V using a Buck Voltage Converter
+
+
+# Circuit Diagram
+Circuit diagram drawn by https://www.circuit-diagram.org/
