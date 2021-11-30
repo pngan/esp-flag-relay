@@ -40,7 +40,7 @@ Wifi connection to the ESP uses the AutoConnect library. The instructions on thi
 
 - Click the hamburger menu, and then select `Configure new AP`
 
-<img src="readme/IMG_5794.JPG" height="400">
+<img src="readme/IMG_5794.jpg" height="400">
 
 - Select the local 2.4 GHz Wifi network from which to control the Flag Relay.
 - Enter credentials to connect to the Wifi network, and click `Apply`.
@@ -49,12 +49,12 @@ Wifi connection to the ESP uses the AutoConnect library. The instructions on thi
 - On the Admin Console for that wifi network, find the DHCP address that was assigned to the Flag Relay.
 - Browse to that IP Address, and you should see the Button Panel to control the Flag Relay.
 
-<img src="readme/IMG_5795.JPG" height="400">
+<img src="readme/IMG_5795.jpg" height="400">
 
 # Running the Flag Relay
 
 After connecting the power to the Flag Relay, the Reset  Button must be pressed on the ESP-8266 board, in order for it to start running.
-<img src="readme/IMG_5796.JPG" height="400">
+<img src="readme/IMG_5796.jpg" height="400">
 
 
 # Hardware Notes
