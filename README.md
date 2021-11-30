@@ -76,5 +76,11 @@ After connecting the power to the Flag Relay, the Reset  Button must be pressed 
 - Power supply is 22V (positive centre), which is required by the Flag Relay solenoids. The same power supply is reduced to 3.3V using a Buck Voltage Converter
 
 ### Circuit Diagram
+
+- The 3.3V is connected directly to an output pin of the ESP-8266
+- The transistor is a `TIP-120`
+- The diode is a `IN-4001`
+- The resistors are rated 0.25W
+
 <img src="readme/circuit.png" height="400">
 Circuit diagram drawn by https://www.circuit-diagram.org/
