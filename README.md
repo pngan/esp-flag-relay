@@ -36,7 +36,7 @@ Wifi connection to the ESP uses the AutoConnect library. The instructions on thi
 
 - The flag relay will now operate as an access point. Using a wifi device (e.g. a phone), list the local wifi networks. Connect to the network called `esp8266ap`. It may take a couple of minutes for this network to appear. The password is `12345678`. A login page should appear. Otherwise browse to the login page using the url `http://ESP8266IPADDRESS/_ac`
 
-<img src="readme/IMG_5793.JPG" height="400">
+<img src="readme/IMG_5793.jpg" height="400">
 
 - Click the hamburger menu, and then select `Configure new AP`
 
