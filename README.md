@@ -67,4 +67,5 @@ After connecting the power to the Flag Relay, the Reset  Button must be pressed 
 
 
 # Circuit Diagram
+<img src="readme/circuit.png" height="400">
 Circuit diagram drawn by https://www.circuit-diagram.org/
