@@ -46,8 +46,9 @@ Wifi connection to the ESP uses the AutoConnect library. The instructions on thi
 - Enter credentials to connect to the Wifi network, and click `Apply`.
 - Click the hardware reset button, to re-run the sketch, but this time it will connect to the wifi network that was just set up.
 - On the phone, reconnect to the wifi network that was just set up
-- Log into the administration page of the wireless router or Access Point for the wifi network .Find the DHCP address that was assigned to the Flag Relay.
+- Log into the administration page of the wireless router or Access Point for the wifi network. Find the DHCP address that was assigned to the Flag Relay.
 - Browse to that IP Address on a web browser, and you should see the Button Panel to control the Flag Relay.
+- Pressing one of the buttons will trigger the flag on the Flag Relay. You need to mechanically reset the Flag directly on the Flag Relay device - reset cannot be performed remoted.
 
 <img src="readme/IMG_5795.jpg" height="400">
 
