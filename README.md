@@ -2,11 +2,14 @@ This reposistory contains code for an ESP-8266 Arduino Sketch (.ino file) that p
 
 The code is compiled and uploaded to a Lolin D1 mini ESP-8266 device, using the Arduino IDE.
 
+# Prerequisites
+- Wifi 803.11g, 2.4GHz (ESP-8266 does not support 5 Ghz)
+- SSID and Password
+- Access to admin console of the Wifi Router
+
 # Setup
 
 ## Connect to Local Wifi.
-
-Note: Needs to be 802.11g, 2.4 GHz. The ESP-8266 does not support 5 GHz wifi.
 
 Follow these instructions to connect the Flag Relay system to a 2.4 GHz Wifi. This is needed when connecting to Wifi for the first time, or if the device has been previously connected to a network, then these instruction show how to change the Wifi network.
 
