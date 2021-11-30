@@ -18,7 +18,9 @@ Any previous credential stored in the ESP-8266 flash, will be used to automatica
 - Download the [Espressif Flash Download tool](https://www.espressif.com/en/support/download/other-tools) for Windows
 - Open the flag relay box and connect the computer to the ESP-8266 using a data-capable USB cable
 - Find the COM used for the serial communications by opening the Device Manager `devmgmt.msc` control panel and inspecting the Ports setting. If the COM port is not showing, you need to install the `CH340` Serial Device Driver.
-- Run the `Flash Download tool`, set the correct COM Port, and Click `Erase`. It will take 5 seconds to complete.
+- Run the `Flash Download tool`, set the correct COM Port
+- Load the [Dummy 1MB file](readme/blank_1MB.bin) (see image)
+- Click `Erase`. It will take 5 seconds to complete.
 
 
 <img src="readme/download-tool.JPG" height="400">
