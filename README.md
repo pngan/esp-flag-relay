@@ -53,7 +53,7 @@ Wifi connection to the ESP uses the AutoConnect library. The instructions on thi
 
 # Running the Flag Relay
 
-After connecting the power to the Flag Relay, the Hardware Reset Pin must be pressed on the ESP-8266 board, in order for it to start running.
+After connecting the power to the Flag Relay, the Reset  Button must be pressed on the ESP-8266 board, in order for it to start running.
 <img src="readme/IMG_5796.JPG" height="400">
 
 
