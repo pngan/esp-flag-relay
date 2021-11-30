@@ -74,6 +74,6 @@ After connecting the power to the Flag Relay, the Reset  Button must be pressed 
 - Output stage uses `TIP-120` Darlington transistors to switch the current to each solenoid in the Flag Relay. These are cheaper to use than hardware relays
 - Power supply is 22V (positive centre), which is required by the Flag Relay solenoids. The same power supply is reduced to 3.3V using a Buck Voltage Converter
 
-# Circuit Diagram
+### Circuit Diagram
 <img src="readme/circuit.png" height="400">
 Circuit diagram drawn by https://www.circuit-diagram.org/
