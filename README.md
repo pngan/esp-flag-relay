@@ -81,6 +81,8 @@ After connecting the power to the Flag Relay, the Reset  Button must be pressed 
 - The transistor is a `TIP-120`
 - The diode is a `IN-4001`
 - The resistors are rated 0.25W
+- The `Relay` is a relay coil on the Flag Relay device
+- This circuit is replicated 8 times, to control 8 flags
 
 <img src="readme/circuit.png" height="400">
 Circuit diagram drawn by https://www.circuit-diagram.org/
