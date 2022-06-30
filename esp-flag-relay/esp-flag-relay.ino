@@ -17,6 +17,8 @@ ESP8266WebServer Server;
 AutoConnect Portal(Server);
 AutoConnectConfig Config;
 
+
+
 String SendHTML(){
   String ptr = "<!DOCTYPE html> <html>\n";
  ptr +="<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\">\n";
@@ -165,9 +167,27 @@ void setup() {
   Server.on("/flag9", handle_flag9);
   Server.onNotFound(handle_NotFound);
 
-  Config.channel = 3;
+
+/*********STATIC IP WIFI CONFIGURATION ******/
+/* MAC Address E8:DB:84:DC:44:E7  */
+
+/* DON'T check these values in
+See email from 
+Ghazi Suliyanto
+30/06/2022
+*/
+char* ssid = "";
+char* passphrase = "";
+
+Config.staip = IPAddress(192,168,0,48);
+Config.staGateway = IPAddress(192,168,0,15);
+Config.staNetmask = IPAddress(255,255,255,0);
+Config.dns1 = IPAddress(192,168,0,15);
+Config.channel = 3;
+
+
   Portal.config(Config);
-  Portal.begin();
+  Portal.begin(ssid, passphrase);
 
   Serial.begin(115200);
   Serial.println("Web Server started:" + WiFi.localIP().toString());
